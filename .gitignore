@@ -1,0 +1,10 @@
+build/
+*.o
+*.so
+*.swp
+*~
+.vscode/
+.idea/
+.DS_Store
+core.*
+oran-stack/

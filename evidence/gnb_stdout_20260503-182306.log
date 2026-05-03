@@ -1,0 +1,10 @@
+Could not stop application after 5 seconds. Forcing exit.
+
+--== srsRAN gNB (commit 9d5dd742a7) ==--
+
+
+The PRACH detector will not meet the performance requirements with the configuration {Format B4, ZCZ 0, SCS 30kHz, Rx ports 1}.
+Initializing the Open Fronthaul Interface for sector#0: ul_compr=[BFP,9], dl_compr=[BFP,9], prach_compr=[BFP,9], prach_cp_enabled=true, downlink_broadcast=false
+Cell pci=1, bw=20 MHz, 2T2R, dl_arfcn=628032 (n78), dl_freq=3420.48 MHz, dl_ssb_arfcn=627744, ul_freq=3420.48 MHz
+
+N2: Connection to AMF on 127.0.0.5:38412 completed

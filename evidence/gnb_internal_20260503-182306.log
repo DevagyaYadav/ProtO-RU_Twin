@@ -1,0 +1,474 @@
+2026-05-03T12:47:54.844011 [GNB     ] [I] Built in Release mode using commit 9d5dd742a7 on branch HEAD
+2026-05-03T12:47:54.858474 [CONFIG  ] [D] Input configuration (all values): 
+gnb_id: 411
+gnb_id_bit_length: 22
+ran_node_name: cu_cp_01
+log:
+  filename: /tmp/gnb.log
+  lib_level: debug
+  e2ap_level: debug
+  config_level: debug
+  metrics_level: debug
+  hex_max_size: 0
+  pdcp_level: debug
+  rrc_level: debug
+  ngap_level: debug
+  f1ap_level: debug
+  cu_level: debug
+  sec_level: debug
+  f1ap_json_enabled: false
+  sdap_level: debug
+  gtpu_level: debug
+  f1u_level: debug
+  mac_level: debug
+  rlc_level: debug
+  du_level: debug
+  broadcast_enabled: false
+  phy_level: debug
+  phy_rx_symbols_prach: false
+  phy_rx_symbols_port: 0
+  fapi_level: debug
+  ofh_level: debug
+metrics:
+  addr: 127.0.0.1
+  port: 55555
+  cu_cp_statistics_report_period: 1
+  cu_up_statistics_report_period: 1
+  pdcp_report_period: 0
+  rlc_report_period: 0
+  rlc_json_enable: false
+  enable_json_metrics: false
+  sched_report_period: 1000
+e2:
+  enable_du_e2: false
+  addr: 127.0.0.1
+  port: 36421
+  bind_addr: 127.0.0.1
+  sctp_rto_initial: 120
+  sctp_rto_min: 120
+  sctp_rto_max: 500
+  sctp_init_max_attempts: 3
+  sctp_max_init_timeo: 500
+  e2sm_kpm_enabled: false
+  e2sm_rc_enabled: false
+expert_execution:
+  affinities:
+    low_priority_pinning: mask
+    ru_timing_cpu: ""
+  threads:
+    non_rt:
+      nof_non_rt_threads: 4
+    upper_phy:
+      pdsch_processor_type: auto
+      nof_pusch_decoder_threads: 1
+      nof_ul_threads: 1
+      nof_dl_threads: 4
+    ofh:
+      enable_dl_parallelization: true
+  cell_affinities:
+    - l2_cell_pinning: mask
+      l1_dl_pinning: mask
+      l1_ul_pinning: mask
+      ru_pinning: mask
+buffer_pool:
+  nof_segments: 1048576
+  segment_size: 2048
+cu_cp:
+  max_nof_dus: 6
+  max_nof_cu_ups: 6
+  max_nof_ues: 8192
+  max_nof_drbs_per_ue: 8
+  inactivity_timer: 120
+  pdu_session_setup_timeout: 3
+  amf:
+    no_core: false
+    amf:
+      addr: 127.0.0.5
+      port: 38412
+      bind_addr: 127.0.0.1
+      bind_interface: auto
+      sctp_rto_initial: 120
+      sctp_rto_min: 120
+      sctp_rto_max: 500
+      sctp_init_max_attempts: 3
+      sctp_max_init_timeo: 500
+      sctp_nodelay: false
+      supported_tracking_areas:
+        - tac: 1
+          plmn_list:
+            - plmn: 00101
+              tai_slice_support_list:
+                - sst: 1
+  mobility:
+    trigger_handover_from_measurements: false
+  rrc:
+    force_reestablishment_fallback: false
+    rrc_procedure_timeout_ms: 720
+  security:
+    integrity: not_needed
+    confidentiality: required
+    nea_pref_list: nea0,nea2,nea1,nea3
+    nia_pref_list: nia2,nia1,nia3
+  f1ap:
+    procedure_timeout: 1000
+pcap:
+  ngap_filename: /tmp/gnb_ngap.pcap
+  ngap_enable: false
+  f1ap_filename: /tmp/gnb_f1ap.pcap
+  f1ap_enable: false
+  e1ap_filename: /tmp/gnb_e1ap.pcap
+  e1ap_enable: false
+  n3_filename: /tmp/gnb_n3.pcap
+  n3_enable: false
+  f1u_filename: /tmp/gnb_f1u.pcap
+  f1u_enable: false
+  e2ap_filename: /tmp/gnb_e2ap.pcap
+  e2ap_enable: false
+  rlc_filename: /tmp/gnb_rlc.pcap
+  rlc_rb_type: all
+  rlc_enable: false
+  mac_filename: /tmp/gnb_mac.pcap
+  mac_type: udp
+  mac_enable: false
+slicing:
+  - sst: 1
+cu_up:
+  gtpu_queue_size: 2048
+  warn_on_drop: false
+upf:
+  bind_addr: 127.0.0.1
+  bind_interface: auto
+  ext_addr: auto
+  udp_max_rx_msgs: 256
+  no_core: false
+gnb_du_id: 0
+du:
+  warn_on_drop: false
+cells:
+  - pci: 1
+    dl_arfcn: 628032
+    common_scs: 30
+    channel_bandwidth_MHz: 20
+    nof_antennas_ul: 2
+    nof_antennas_dl: 2
+    plmn: 00101
+    tac: 1
+    q_rx_lev_min: -70
+    q_qual_min: -20
+    band: 78
+    mac_cell_group:
+      bsr_cfg:
+        periodic_bsr_timer: 10
+        retx_bsr_timer: 80
+      phr_cfg:
+        phr_prohibit_timer: 10
+      sr_cfg:
+        sr_trans_max: 64
+    ssb:
+      ssb_period: 10
+      ssb_block_power_dbm: 20
+      pss_to_sss_epre_db: 0
+    sib:
+      si_window_length: 160
+      t300: 1000
+      t301: 1000
+      t310: 1000
+      t311: 3000
+      t319: 1000
+      n310: 1
+      n311: 1
+    ul_common:
+      max_pucchs_per_slot: 31
+      max_ul_grants_per_slot: 32
+    pdcch:
+      common:
+        ss0_index: 0
+        ss1_n_candidates: [0, 0, 1, 0, 0]
+      dedicated:
+        dci_format_0_1_and_1_1: true
+        ss2_type: ue_dedicated
+        ss2_n_candidates: [0, 0, 0, 0, 0]
+    pdsch:
+      min_ue_mcs: 0
+      max_ue_mcs: 28
+      fixed_rar_mcs: 0
+      fixed_sib1_mcs: 5
+      nof_harqs: 16
+      max_nof_harq_retxs: 4
+      max_consecutive_kos: 100
+      mcs_table: qam64
+      min_rb_size: 1
+      max_rb_size: 275
+      start_rb: 0
+      end_rb: 275
+      max_pdschs_per_slot: 35
+      olla_cqi_inc_step: 0.00100000005
+      olla_target_bler: 0.100000001
+      olla_max_cqi_offset: 4
+      dc_offset: center
+      harq_la_cqi_drop_threshold: 3
+      harq_la_ri_drop_threshold: 1
+      dmrs_additional_position: 2
+      rv_sequence: [0, 2, 3, 1]
+    pusch:
+      min_ue_mcs: 0
+      max_ue_mcs: 28
+      max_consecutive_kos: 100
+      mcs_table: qam64
+      msg3_delta_preamble: 6
+      p0_nominal_with_grant: 24
+      max_puschs_per_slot: 16
+      b_offset_ack_idx_1: 9
+      b_offset_ack_idx_2: 9
+      b_offset_ack_idx_3: 9
+      beta_offset_csi_p1_idx_1: 9
+      beta_offset_csi_p1_idx_2: 9
+      beta_offset_csi_p2_idx_1: 9
+      beta_offset_csi_p2_idx_2: 9
+      min_k2: 4
+      dc_offset: center
+      olla_snr_inc_step: 0.00100000005
+      olla_target_bler: 0.100000001
+      olla_max_snr_offset: 5
+      dmrs_additional_position: 2
+      min_rb_size: 1
+      max_rb_size: 275
+      start_rb: 0
+      end_rb: 275
+      rv_sequence: [0]
+    pucch:
+      p0_nominal: -90
+      pucch_resource_common: 11
+      use_format_0: false
+      sr_period_ms: 20
+      nof_ue_pucch_res_harq_per_set: 8
+      f0_or_f1_nof_cell_res_sr: 8
+      f0_intraslot_freq_hop: false
+      f1_enable_occ: true
+      f1_nof_cyclic_shifts: 2
+      f1_intraslot_freq_hop: false
+      nof_cell_harq_pucch_res_sets: 2
+      f2_nof_cell_res_csi: 8
+      f2_max_nof_rbs: 1
+      f2_max_code_rate: dot35
+      f2_intraslot_freq_hop: false
+      min_k1: 4
+      max_consecutive_kos: 100
+    prach:
+      prach_config_index: 159
+      prach_frequency_start: 0
+      prach_root_sequence_index: 1
+      zero_correlation_zone: 0
+      fixed_msg3_mcs: 0
+      max_msg3_harq_retx: 4
+      preamble_rx_target_pw: -150
+      preamble_trans_max: 7
+      power_ramping_step_db: 4
+      nof_ssb_per_ro: 1
+      nof_cb_preambles_per_ssb: 64
+      ports: [0]
+      ra_resp_window: 20
+    tdd_ul_dl_cfg:
+      dl_ul_tx_period: 5
+      nof_dl_slots: 3
+      nof_dl_symbols: 10
+      nof_ul_slots: 1
+      nof_ul_symbols: 2
+    paging:
+      pg_search_space_id: 1
+      default_pg_cycle_in_rf: 128
+      nof_pf_per_paging_cycle: oneT
+      pf_offset: 0
+      nof_po_per_pf: 1
+    csi:
+      csi_rs_enabled: true
+      csi_rs_period: 20
+      pwr_ctrl_offset: 0
+expert_phy:
+  max_proc_delay: 10
+  pusch_dec_max_iterations: 15
+  pusch_dec_enable_early_stop: true
+  pusch_sinr_calc_method: post_equalization
+  max_request_headroom_slots: 10
+fapi:
+  l2_nof_slots_ahead: 0
+ru_ofh:
+  gps_alpha: 0
+  gps_beta: 0
+  cells:
+    - ru_bandwidth_MHz: 20
+      t1a_max_cp_dl: 2635
+      t1a_min_cp_dl: 2386
+      t1a_max_cp_ul: 2635
+      t1a_min_cp_ul: 2386
+      t1a_max_up: 2490
+      t1a_min_up: 2180
+      ta4_max: 1300
+      ta4_min: 925
+      is_prach_cp_enabled: true
+      is_dl_broadcast_enabled: false
+      ignore_ecpri_seq_id: false
+      ignore_ecpri_payload_size: true
+      warn_unreceived_ru_frames: true
+      compr_method_ul: bfp
+      compr_bitwidth_ul: 9
+      compr_method_dl: bfp
+      compr_bitwidth_dl: 9
+      compr_method_prach: bfp
+      compr_bitwidth_prach: 9
+      enable_ul_static_compr_hdr: true
+      enable_dl_static_compr_hdr: true
+      iq_scaling: 10
+      network_interface: veth_du
+      enable_promiscuous: true
+      mtu: 9000
+      ru_mac_addr: c2:17:5f:8f:dc:90
+      du_mac_addr: 2e:c7:77:9e:d0:96
+      prach_port_id: 5
+      dl_port_id: 1
+      ul_port_id: 1
+2026-05-03T12:47:55.869183 [GNB     ] [D] Detected CPU topology: 12 CPUs, 1 NUMA node.
+CPUs per each physical CPU core:
+{
+   0: [0,6]
+   1: [1,7]
+   2: [2,8]
+   3: [3,9]
+   4: [4,10]
+   5: [5,11]
+}
+12 CPUs available to the application: [0,1,2,3,4,5,6,7,8,9,10,11]
+2026-05-03T12:47:55.869188 [GNB     ] [D] Required CPU features: sse4.1(ok) avx(ok) avx2(ok) avx512f(ok) avx512bw(ok) avx512vl(ok) avx512dq(ok) avx512cd(ok) fma(ok) pclmul(ok)
+2026-05-03T12:47:55.869242 [GNB     ] [W] CPU0 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869258 [GNB     ] [W] CPU1 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869267 [GNB     ] [W] CPU2 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869277 [GNB     ] [W] CPU3 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869287 [GNB     ] [W] CPU4 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869297 [GNB     ] [W] CPU5 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869306 [GNB     ] [W] CPU6 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869315 [GNB     ] [W] CPU7 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869325 [GNB     ] [W] CPU8 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869335 [GNB     ] [W] CPU9 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869345 [GNB     ] [W] CPU10 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869354 [GNB     ] [W] CPU11 scaling governor is not set to performance, which may hinder performance. You can set it to performance using the "srsran_performance" script
+2026-05-03T12:47:55.869366 [GNB     ] [W] DRM KMS polling is enabled, which may hinder performance. You can disable it using the "srsran_performance" script
+2026-05-03T12:47:55.878463 [ALL     ] [I] Task worker "phy_prach#0" started...
+2026-05-03T12:47:55.878763 [ALL     ] [I] Task worker "ru_timing" started...
+2026-05-03T12:47:55.879003 [ALL     ] [I] Task worker "ru_rx_0" started...
+2026-05-03T12:47:55.879150 [ALL     ] [I] Task worker "ru_txrx_#0" started...
+2026-05-03T12:47:55.879186 [IO-EPOLL] [D] io_broker thread started...
+2026-05-03T12:47:55.879810 [SCTP-GW ] [D] E2AP: SCTP socket created with fd=6
+2026-05-03T12:47:55.879811 [SCTP-GW ] [D] Setting socket options. params=[if_name=E2AP ai_family=2 ai_socktype=5 reuse_addr=false non_blockin_mode=false rx_timeout=1 rto_initial={na} rto_min={na} rto_max={na} init_max_attempts={na} max_init_timeo={na} no_delay={na}]
+2026-05-03T12:47:55.879820 [SCTP-GW ] [D] E2AP: Binding to 127.0.0.1:0...
+2026-05-03T12:47:55.879829 [SCTP-GW ] [I] E2AP: Bind to 127.0.0.1:0 was successful
+2026-05-03T12:47:55.879836 [SCTP-GW ] [D] E2AP: SCTP socket created with fd=7
+2026-05-03T12:47:55.879836 [SCTP-GW ] [D] Setting socket options. params=[if_name=E2AP ai_family=2 ai_socktype=5 reuse_addr=false non_blockin_mode=false rx_timeout=1 rto_initial={na} rto_min={na} rto_max={na} init_max_attempts={na} max_init_timeo={na} no_delay={na}]
+2026-05-03T12:47:55.879840 [SCTP-GW ] [D] E2AP: Binding to 127.0.0.1:0...
+2026-05-03T12:47:55.879842 [SCTP-GW ] [I] E2AP: Bind to 127.0.0.1:0 was successful
+2026-05-03T12:47:55.879876 [SCTP-GW ] [D] N2: SCTP socket created with fd=8
+2026-05-03T12:47:55.879876 [SCTP-GW ] [D] Setting socket options. params=[if_name=N2 ai_family=2 ai_socktype=5 reuse_addr=false non_blockin_mode=false rx_timeout=1 rto_initial=120 rto_min=120 rto_max=500 init_max_attempts=3 max_init_timeo=500 no_delay={na}]
+2026-05-03T12:47:55.879881 [SCTP-GW ] [D] N2: Setting RTO_INFO options on SCTP socket. Association 0, Initial RTO 120, Minimum RTO 120, Maximum RTO 500
+2026-05-03T12:47:55.879884 [SCTP-GW ] [D] N2: Setting SCTP_INITMSG options on SCTP socket. Max attempts 3, Max init attempts timeout 500
+2026-05-03T12:47:55.879887 [SCTP-GW ] [D] N2: Binding to 127.0.0.1:0...
+2026-05-03T12:47:55.879889 [SCTP-GW ] [I] N2: Bind to 127.0.0.1:0 was successful
+2026-05-03T12:47:55.882651 [GTPU    ] [I] GTP-U demux. warn_on_drop=false test_mode=false
+2026-05-03T12:47:55.882666 [GTPU    ] [I] Tunnel added. teid=0x000000
+2026-05-03T12:47:55.882672 [UDP-GW  ] [I] UDP GW configured. rx_max_mmsg=256 pool_thres=0.9
+2026-05-03T12:47:55.883803 [UDP-GW  ] [D] Binding to 127.0.0.1 port 2152
+2026-05-03T12:47:55.883808 [UDP-GW  ] [D] Binding successful
+2026-05-03T12:47:55.883866 [IO-EPOLL] [I] fd=9: Registered file descriptor successfully
+2026-05-03T12:47:56.061727 [DU      ] [D] DU low created successfully
+2026-05-03T12:47:56.061787 [DU      ] [D] DU-low wrapper created successfully
+2026-05-03T12:47:56.061827 [DU      ] [D] FAPI adaptors created successfully
+2026-05-03T12:47:56.070045 [DU      ] [I] DU created successfully
+2026-05-03T12:47:56.070051 [DU      ] [I] DU wrapper created successfully
+2026-05-03T12:47:56.072956 [OFH     ] [I] Opened successfully the NIC interface 'veth_du' used by the Ethernet receiver
+2026-05-03T12:47:56.072964 [OFH     ] [I] Opened successfully the NIC interface 'veth_du' used by the Ethernet transmitter
+2026-05-03T12:47:56.118295 [GNB     ] [I] SSB derived parameters for cell: 1, band: 78, dl_arfcn:628032, nof_crbs: 51 scs:30kHz, ssb_scs:30kHz:
+	 - SSB offset pointA:6 
+	 - k_SSB:12 
+	 - SSB arfcn:627744 
+	 - Coreset index:3 
+	 - Searchspace index:0
+2026-05-03T12:47:56.118354 [IO-EPOLL] [I] fd=0: Registered file descriptor successfully
+2026-05-03T12:47:56.118356 [GNB     ] [I] Starting CU-CP...
+2026-05-03T12:47:56.118449 [CU-CP   ] [D] Establishing TNL connection to AMF (127.0.0.5:38412)...
+2026-05-03T12:47:56.118469 [SCTP-GW ] [D] N2: Connecting to 127.0.0.5:38412...
+2026-05-03T12:47:56.118607 [IO-EPOLL] [I] fd=8: Registered file descriptor successfully
+2026-05-03T12:47:56.118610 [SCTP-GW ] [I] N2: SCTP connection to AMF on 127.0.0.5:38412 was established
+2026-05-03T12:47:56.118613 [CU-CP   ] [I] N2: Connection to AMF on 127.0.0.5:38412 was established
+2026-05-03T12:47:56.118614 [SCTP-GW ] [D] N2: Rx SCTP_ASSOC_CHANGE: state=SCTP_COMM_UP error=0 outbound_streams=10 inbound_streams=30 assoc=29
+2026-05-03T12:47:56.118618 [NGAP    ] [I] Sending NgSetupRequest
+2026-05-03T12:47:56.118709 [NGAP    ] [D] "NG Setup Procedure" started...
+2026-05-03T12:47:56.118715 [NGAP    ] [I] Tx PDU: NGSetupRequest
+{
+  "initiatingMessage": {
+    "procedureCode": 21,
+    "criticality": "reject",
+    "value": {
+      "NGSetupRequest": {
+        "protocolIEs": {
+          "id": 27,
+          "criticality": "reject",
+          {
+            "globalGNB-ID": {
+              "pLMNIdentity": "00f110",
+              "gNB-ID": {
+                "gNB-ID": "0000000000000110011011"
+              }
+            }
+          },
+          "id": 82,
+          "criticality": "ignore",
+          "Value": "cu_cp_01",
+          "id": 102,
+          "criticality": "reject",
+          "Value": [
+            {
+              "tAC": "000001",
+              "broadcastPLMNList": [
+                {
+                  "pLMNIdentity": "00f110",
+                  "tAISliceSupportList": [
+                    {
+                      "s-NSSAI": {
+                        "sST": "01"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "id": 21,
+          "criticality": "ignore",
+          "Value": "v256"
+        }
+      }
+    }
+  }
+}
+2026-05-03T12:47:56.118746 [SCTP-GW ] [D] N2: Sending PDU of 55 bytes
+2026-05-03T12:47:56.125255 [SCTP-GW ] [D] N2: Received 17 bytes
+2026-05-03T12:47:56.125356 [NGAP    ] [I] Rx PDU: NGSetupFailure
+{
+  "unsuccessfulOutcome": {
+    "procedureCode": 21,
+    "criticality": "reject",
+    "value": {
+      "NGSetupFailure": {
+        "protocolIEs": {
+          "id": 15,
+          "criticality": "ignore",
+          {
+            "misc": "unknown-PLMN-or-SNPN"
+          },
+          "id": 107,
+          "criticality": "ignore",
+          "Value": "v10s"
+        }
+      }
+    }
+  }
+}
+2026-05-03T12:47:56.125360 [NGAP    ] [I] Reinitiating NG setup in 10000s (retry=1/1). Received NGSetupFailure with Time to Wait IE

@@ -41,9 +41,6 @@ TWiN-IITH-ProtORU/
 ├── scripts/                  Setup and utility scripts
 │   ├── start_stack.sh        Pre-flight check and startup guide
 │   └── cleanup_cgroups.sh    Clean stale srs cgroups before launch
-├── results/                  Captured runtime logs and evidence
-│   ├── gnb_internal_*.log    gNB internal debug log
-│   └── gnb_stdout_*.log      gNB stdout capture
 ├── demo/                     Demo video and description
 │   └── README.md
 ├── .gitignore
